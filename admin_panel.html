@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h2>Admin Panel</h2>
+    <div>
+        <h3>Enter Employee Details</h3>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" placeholder="Employee Name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Employee Email"><br>
+        <label for="department">Department:</label><br>
+        <label id="department"></label>
+        <select id="department">
+            <option value="">Select Department</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+        </select><br>
+        <label for="salary">Salary:</label><br>
+        <input type="number" id="salary" placeholder="Enter Salary"><br>
+        <label for="d">Joining Date:</label><br>
+        <input type="date" id="d" placeholder="Joining Date"><br>
+        <button id="btn"  onclick="Add()">Add Employee</button>
+    </div>
+    <div>
+        <h3>Employee List</h3>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Joining Date</th>
+            </tr>
+            
+                <script>
+                    // Sample data for demonstration
+                    const employees = [
+                        { name: "ram", email: "ram@gmail.com", department: "IT", salary: 50000, joiningDate: "2022-01-15" },
+                        { name: "suresh", email: "suresh@gmail.com", department: "HR", salary: 45000, joiningDate: "2021-03-10" }
+                      
+                    ];
+                    employees.forEach(emp => {
+                        document.write(`<tr>
+                            <td>${emp.name}</td>
+                            <td>${emp.email}</td>
+                            <td>${emp.department}</td>
+                            <td>${emp.salary}</td>
+                            <td>${emp.joiningDate}</td>
+                        </tr>`);
+                    });
+                </script>
+            </table>
+       
+        </table>
+
+    </div>
+    <div atyle="margin-top: 20px;">
+        <h3>Update Employee Details</h3>
+        <label for="updateEmail">Employee Email:</label><br>
+        <input type="text" id="updateName" placeholder="Employee Name" ><br>
+        <label for="updateEmail">Employee Email:</label><br>
+        <input type="email" id="updateEmail" placeholder="Employee Email"><br>
+        <label for="updateDepartment">Department:</label><br>
+        <select id="department">
+            <option value="">Select Department</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+        </select><br>
+        <label for="updateSalary">Salary:</label><br>
+        <input type="number" id="updateSalary" placeholder="Enter Salary"><br>
+        <label for="updateD">Joining Date:</label><br>
+        <input type="date" id="updateD" placeholder="Joining Date"><br>
+
+        <button onclick="Update()">Update Employee</button>
+    </div>
+    <div>
+        <h3>Delete Employee</h3>
+        <label for="deleteEmail">Employee Email:</label><br>
+        <input type="email" id="deleteEmail" placeholder="Employee Email"><br>
+        <button  onclick="Delete()">Delete Employee</button>
+    </div>
+    <div>
+        <h3>Search Employee</h3>
+        <label for="searchEmployee">Employee Name:</label><br>
+        <input type="text" id="searchEmployee" placeholder="Employee Name"><br>
+        <button onclick="Search()">Search Employee</button>
+    </div>
+   <center> <button onclick="window.location.href='index.html'" style="background-color: red;color: white;">Logout</button></center>
+</body>
+<script>
+    function Add(){
+    document.getElementById('btn').addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const department = document.getElementById('department').value;
+        const salary = document.getElementById('salary').value;
+        const joiningDate = document.getElementById('d').value;
+        doument.write(`<tr>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${department}</td>
+                            <td>${salary}</td>
+                            <td>${joiningDate}</td>
+                        </tr>`);
+            alert("Employee added successfully");
+        } 
+    );}
+    function Update(){
+        document.getElementById('btn').addEventListener('click', function() {
+            const name = document.getElementById('updateName').value;
+            const email = document.getElementById('updateEmail').value;
+            const department = document.getElementById('department').value;
+            const salary = document.getElementById('updateSalary').value;
+            const joiningDate = document.getElementById('updateD').value;
+            alert("Employee details updated successfully");
+        }
+    );
+    }
+    function Delete(){
+        document.getElementById('btn').addEventListener('click', function() {
+            const email = document.getElementById('deleteEmail').value;
+            alert("Employee deleted successfully");
+        }
+    );
+    }
+    function Search(){
+        document.getElementById('btn').addEventListener('click', function() {
+            const name = document.getElementById('searchEmployee').value;
+            alert("Employee found");
+        }
+    );
+    }
+
+   
+</script>
+</html>

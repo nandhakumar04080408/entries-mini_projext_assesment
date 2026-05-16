@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <h1 style="text-align: center;">Employee Managment System</h1>
+    <div style="align-items: center;">
+        <h2 >Login/SignUp</h2>
+        <label for="username" style="text-align: center;">Username:</label><br>
+        <input type="text" id="username" placeholder="Username" style="text-align: center;" ><br>
+        <label for="password" style="text-align: center;">Password:</label><br>
+        <input type="password" id="passsword" placeholder="Password" style="text-align: center;"><br>
+        <button style="background-color:grey ;color: white;" onclick="window.location.href='admin_panel.html'">Login</button><br>
+    </div>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === "admin" && password === "admin123") {
+                alert("Login successful!");
+                window.location.href = "admin_panel.html";
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
